@@ -68,7 +68,7 @@ def contact():
             msg = Message(
                 subject = f"New Contact Form Submission: {subject}",
                 sender=app.config['MAIL_USERNAME'],
-                recipients = app.config['MAIL_USERNAME'],
+                recipients = ['laraibansari1214@gmail.com'],
                 body = f"Name: {name}\nEmail: {email}\n\nSubject: {subject}\n\n\nMessage: {message_content}",
                 reply_to = email
             )
