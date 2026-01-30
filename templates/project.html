@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    
+</head>
+<body>
+    {% extends 'index.html' %}
+
+    {% block content %}
+    <section class="masonry-section" id="project">
+        <h2>Design Projects</h2>
+
+        <div class="masonry" class="animate-on-view">
+            <div class="masonry-item">
+                <img src="../static/images/project-bear.jpeg" class="lightbox-item" alt="">
+            </div>
+
+            <div class="masonry-item">
+                <img src="../static/images/project-cut-style.jpeg" class="lightbox-item" alt="">
+            </div>
+
+            <div class="masonry-item">
+                <img src="../static/images/project-product.jpeg" class="lightbox-item" alt="">
+            </div>
+
+            <div class="masonry-item">
+                <img src="../static/images/illustrator-both.jpeg" class="lightbox-item" alt="">
+            </div>
+            
+            <div class="masonry-item">
+                <img src="../static/images/project-water-face.jpeg" class="lightbox-item" alt="">
+            </div>
+
+            <div class="masonry-item">
+                <img src="../static/images/project-light.jpeg" class="lightbox-item" alt="">
+            </div>
+            
+            <div class="masonry-item">
+                <img src="../static/images/project-cherry.jpeg" class="lightbox-item" alt="">
+            </div>
+
+            <div class="masonry-item">
+                <img src="../static/images/illustrator-mirror.jpeg" class="lightbox-item" alt="">
+            </div>
+
+            <div class="masonry-item">
+                <img src="../static/images/illustrator-mountain.jpeg" class="lightbox-item" alt="">
+            </div>
+
+            <div class="masonry-item">
+                <img src="../static/images/project-home.jpeg" class="lightbox-item" alt="">
+            </div>
+
+            <div class="masonry-item">
+                <img src="../static/images/project-aeroplane.jpeg" class="lightbox-item" alt="">
+            </div>
+
+            <div class="masonry-item">
+                <img src="../static/images/project-astonout.jpeg" class="lightbox-item" alt="">
+            </div>
+
+            
+            
+        </div>
+    </section>
+
+
+    <section class="masonry-section" style="margin-top: 80px;">
+        <h2>Video Projects</h2>
+
+        <div class="masonry masonry-video">
+            <div class="masonry-item video-item"
+                data-video="../static/images/video-780.mp4">
+                
+                <!-- THUMBNAIL IMAGE -->
+                <img src="../static/images/thumbnail-masonry2.png" alt="">
+
+                <!-- PLAY ICON -->
+                <span class="play-btn">▶</span>
+            </div>
+            
+            
+
+            
+
+            <div class="masonry-item video-item"
+                data-video="../static/images/video6.MOV">
+                
+                <!-- THUMBNAIL IMAGE -->
+                <img src="../static/images/thumbnail-masonry3.png" alt="">
+
+                <!-- PLAY ICON -->
+                <span class="play-btn">▶</span>
+            </div>
+
+            <div class="masonry-item video-item"
+                data-video="../static/images/video3.MP4">
+                
+                <!-- THUMBNAIL IMAGE -->
+                <img src="../static/images/thumbnail-masonry1.png" alt="">
+
+                <!-- PLAY ICON -->
+                <span class="play-btn">▶</span>
+            </div>
+            
+
+            
+        </div>
+    </section>
+
+    {% endblock %}
+
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img">
+    </div>
+
+    {% block code %}
+
+    <script>
+
+        // menu
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            const body = document.body;
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            hamburger.classList.toggle('active');
+        }
+        
+        // light box
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        document.querySelectorAll('.lightbox-item').forEach(item=>{
+            item.addEventListener('click',()=>{
+                lightboxImg.src = item.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click',()=>{
+            lightbox.classList.remove('active');
+        });
+
+
+        // project video 
+        document.querySelectorAll('.video-item').forEach(card => {
+            card.addEventListener('click', () => {
+
+                // prevent double play
+                if(card.querySelector('video')) return;
+
+                const videoSrc = card.dataset.video;
+                const thumbImg = card.querySelector('img');
+
+                const video = document.createElement('video');
+                video.src = videoSrc;
+                video.controls = true;
+                video.autoplay = true;
+                video.playsInline = true;
+                video.preload = "metadata";
+
+                // thumbnail ko poster bana do
+                if(thumbImg){
+                    video.poster = thumbImg.src;
+                }
+
+                // clean replace
+                card.innerHTML = "";
+                card.appendChild(video);
+            });
+        });
+    </script>
+
+    {% endblock %}
+</body>
+</html>

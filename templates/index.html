@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://itnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    
+    <header>
+        <div class="logo"><a href="{{ url_for('index') }}">Portfolio</a></div>
+        <nav>
+            
+            <ul id="nav-menu">
+                <div class="logo mobile-logo"><a href="{{ url_for('index') }}">Portfolio</a></div>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('project') }}">Project</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    {% block content %}
+    <main class="hero-section" id="heroSection">
+
+        <div class="left-content animate-on-view">
+
+
+            <div class="selection-box" id="resizableBox">
+
+                <h4 class="animate-on-view">Hi, I'm <span style="color: #4a7cff;">Laraib Ali</span></h1>
+                <h3 class="animate-on-view">Graphic Designer <span style="color: #4a7cff;">&</span> Video Editor</h3>
+                <p class="animate-on-view">Focused on modern, clean, and impactful visuals. I create branding, posters, and social media designs with creativity, clarity, and storytelling.</p>
+                <a href="{{ url_for('contact') }}" class="cta-btn animate-on-view">
+                    <span class="cta-text">Hire Me!</span>
+                    <span class="cta-icon">→</span>
+                </a>
+
+                <div class="handle top-left"></div>
+                <div class="handle top-right"></div>
+                <div class="handle bottom-left"></div>
+                <div class="handle bottom-right">
+                    <i class="fa-solid fa-location-arrow"></i>
+                </div>
+
+                
+            </div>
+
+            
+
+        </div>
+
+        
+        <div class="right-content animate-on-view">
+            <div class="profile-wrapper">
+                <div class="profile-ring"></div>
+                <img src="../static/images/laraib-profile.jpeg" alt="Profile">
+            </div>
+        </div>
+
+    </main>
+
+
+    <section class="solution-section" id="solutionSection">
+
+        <div class="heading-wrapper">
+            <div class="heading animate-on-view">
+                <h1>
+                    ALL YOUR <br>
+                    <span class="animate-on-view">design needs</span>
+                </h1>
+            </div>
+
+            <!-- Hanging Bulb -->
+            <div class="bulb-container animate-on-view">
+                <div class="wire "></div>
+                <div class="bulb "></div>
+            </div>
+        </div>
+
+        <div class="pills-wrapper">
+            
+
+            <div class="pill p1">Product Design</div>
+            <div class="pill p2">Social Media</div>
+            <div class="pill p3">Magzine Cover</div>
+
+            <div class="pill p4">Poster Design</div>
+            <div class="pill p5">Logos</div>
+
+            <div class="pill p6">Banner</div>
+            <div class="pill p7">Business Card</div>
+
+            <div class="pill p8">Branding Design</div>
+            <div class="pill p9">Cut & Transition</div>
+
+            <div class="pill p10">Color Grading</div>
+            <div class="pill p11">Motion Graphics</div>
+
+            <div class="pill p12">Subtitles & Captions</div>
+            <div class="pill p13">Reel/Short Editing</div>
+            <div class="pill p14">Cenematic Editing</div>
+        </div>
+
+    </section>
+
+
+    <section class="visual-matter" id="Visuals">
+        <h1 class="animate-on-view">Why Greate <span style="color: #004643;">Visuals Matter</span></h1>
+        <p class="animate-on-view">Strong design and engaging videos decide whether people stop scrolling or remember your brand.</p>
+
+        <div class="panel">
+            <div class="left-panel">
+                <h3>Common Problems Brands Face</h3>
+                <ul>
+                    <li><i class="fa-regular fa-circle-check"></i> Designs that don’t grab attention</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Videos with low retention & poor storytelling</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Inconsistent branding across platforms</li>
+                </ul>
+                <a href="{{ url_for('contact') }}"><button><i class="fa-regular fa-comment"></i> Let’s Fix This</button></a>
+                
+            </div>
+            <div class="right-panel">
+                <h3>What I Do Differently</h3>
+                <p>If your visuals fail to communicate, your message gets lost.
+                    I combine <span style="font-weight: bold;">graphic design + video editing</span> to create visuals that are not only beautiful but <span style="font-weight: bold;">purpose-driven</span>.
+                </p>
+                <p class="bold-para">Helping brands look professional, memorable, and conversion-ready.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="project">
+
+        <!-- TABS -->
+        <div class="tabs" id="tabs">
+            <div class="tab active" data-target="ps">Photoshop</div>
+            <div class="tab" data-target="it">Illustrator</div>
+            <!-- <div class="tab" data-target="ae">After Effects</div> -->
+            <!-- <div class="tab" data-target="cv">Canva</div> -->
+
+            <div class="tab-indicator"></div>
+        </div>
+
+        <!-- GRIDS -->
+        <div class="projects-grid active animate-on-view" id="ps">
+            <div class="project-card">
+                <img src="../static/images/project-night.jpeg" class="lightbox-item">
+                
+                <div class="project-content">
+                    <h4>The Scarry Night</h4>
+                    <p>Photoshop branding creatives</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="../static/images/project-food.jpeg" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Poster Design</h4>
+                    <p>Creativity about food menu</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="../static/images/project-man.jpeg" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Poster Design</h4>
+                    <p>Add shades on face</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-grid animate-on-view" id="it">
+            <div class="project-card animate-on-view">
+                <img src="../static/images/illustrator-king.jpeg" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Illustration Design</h4>
+                    <p>Vector logos in Illustrator</p>
+                </div>
+            </div>
+
+            <div class="project-card animate-on-view">
+                <img src="../static/images/illustrator-lighthouse.jpeg" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Vibe Design</h4>
+                    <p>Vector logos in Illustrator</p>
+                </div>
+            </div>
+
+            <div class="project-card animate-on-view">
+                <img src="../static/images/illustrator-stand.jpeg" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Product stand</h4>
+                    <p>Vector logos in Illustrator</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="projects-grid animate-on-view" id="ae">
+            <div class="project-card">
+                <img src="https://picsum.photos/400/300?3" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Motion Intro</h4>
+                    <p>After Effects animation</p>
+                </div>
+            </div>
+
+            <div class="project-card animate-on-view">
+                <img src="https://picsum.photos/400/300?3" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Motion Intro</h4>
+                    <p>After Effects animation</p>
+                </div>
+            </div>
+
+            <div class="project-card animate-on-view">
+                <img src="https://picsum.photos/400/300?3" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Motion Intro</h4>
+                    <p>After Effects animation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-grid animate-on-view" id="cv">
+            <div class="project-card animate-on-view">
+                <img src="https://picsum.photos/400/300?4" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Social Creatives</h4>
+                    <p>Fast Canva designs</p>
+                </div>
+            </div>
+
+            <div class="project-card animate-on-view">
+                <img src="https://picsum.photos/400/300?4" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Social Creatives</h4>
+                    <p>Fast Canva designs</p>
+                </div>
+            </div>
+
+            <div class="project-card animate-on-view">
+                <img src="https://picsum.photos/400/300?4" class="lightbox-item">
+                <div class="project-content">
+                    <h4>Social Creatives</h4>
+                    <p>Fast Canva designs</p>
+                </div>
+            </div>
+        </div> -->
+
+    </section>
+
+    <section class="video-section" id="video">
+        <h2 class="animate-on-view">Video Projects</h2>
+
+        <div class="video-grid animate-on-view">
+
+            <div class="video-card" data-video="../static/images/video5.MOV">
+                <img src="../static/images/thumbnail-bike.png" alt="" loading="lazy">
+                <span class="play-btn"><i class="fa-solid fa-play"></i></span>
+            </div>
+
+            <div class="video-card" data-video="../static/images/video2.MP4">
+                <img src="../static/images/thumbnail-money.png" alt="" loading="lazy">
+                <span class="play-btn"><i class="fa-solid fa-play"></i></span>
+            </div>
+
+            <div class="video-card" data-video="../static/images/video1.MOV">
+                <img src="../static/images/thumbnail-mountaine.png" alt="" loading="lazy">
+                <span class="play-btn"><i class="fa-solid fa-play"></i></span>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    {% endblock %}
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">Laraib Ali</div>
+                <p>Graphic Designer & Video Editor</p>
+                <div class="footer-social">
+                    <a href="https://www.behance.net/laraibansari4" target="_blank"><i class="fa-brands fa-behance"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/mr_lb_02?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('project') }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul>
+                <li>Email: <a href="mailto:laraibansari1214@gmail.com">laraibansari1214@gmail.com</a></li>
+                <li>Phone: +91-9711034857</li>
+                <li>Address: Delhi, IN</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+        &copy; 2026 Laraib Ali. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a 
+    href="https://wa.me/+919711034857" 
+    target="_blank" 
+    class="whatsapp-widget"
+    aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+    <div class="lightbox" id="lightbox">
+        <img id="lightbox-img">
+    </div>
+    
+
+    {% block code %}
+    <script>
+        
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            const body = document.body;
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            hamburger.classList.toggle('active');
+        }
+
+
+        const box = document.getElementById('resizableBox');
+        const handles = box.querySelectorAll('.handle');
+
+        let isResizing = false;
+        let startX, startY, startWidth, startHeight;
+        let currentHandle;
+
+        handles.forEach(handle => {
+        handle.addEventListener('mousedown', startResize);
+        });
+
+        function startResize(e) {
+        e.preventDefault();
+        isResizing = true;
+        currentHandle = e.target.classList[1]; // e.g., 'top-left'
+        startX = e.clientX;
+        startY = e.clientY;
+        startWidth = parseInt(document.defaultView.getComputedStyle(box).width, 10);
+        startHeight = parseInt(document.defaultView.getComputedStyle(box).height, 10);
+
+        document.addEventListener('mousemove', resize);
+        document.addEventListener('mouseup', stopResize);
+        }
+
+        function resize(e) {
+        if (!isResizing) return;
+
+        const widthDiff = e.clientX - startX;
+        const heightDiff = e.clientY - startY;
+
+        let newWidth = startWidth;
+        let newHeight = startHeight;
+
+        if (currentHandle.includes('right')) {
+            newWidth = startWidth + widthDiff;
+        } else if (currentHandle.includes('left')) {
+            newWidth = startWidth - widthDiff;
+        }
+
+        if (currentHandle.includes('bottom')) {
+            newHeight = startHeight + heightDiff;
+        } else if (currentHandle.includes('top')) {
+            newHeight = startHeight - heightDiff;
+        }
+
+        // Apply limits
+        const minWidth = 200;
+        const minHeight = 150;
+        const maxWidth = 800;
+        const maxHeight = 600;
+
+        newWidth = Math.max(minWidth, Math.min(maxWidth, newWidth));
+        newHeight = Math.max(minHeight, Math.min(maxHeight, newHeight));
+
+        box.style.width = `${newWidth}px`;
+        box.style.height = `${newHeight}px`;
+        }
+
+        function stopResize() {
+        isResizing = false;
+        document.removeEventListener('mousemove', resize);
+        document.removeEventListener('mouseup', stopResize);
+        }
+
+
+        // Intersection Observer for animations across the entire page
+        const sections = document.querySelectorAll('#heroSection, #aboutSection, #solutionSection, #Visuals, #project, #video');
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Animate only once
+            }
+        });
+        }, { threshold: 0.1 }); // Trigger when 10% in view
+
+        sections.forEach(section => {
+        observer.observe(section);
+        });
+
+
+        // project section
+        const tabs = document.querySelectorAll('.tab');
+        const indicator = document.querySelector('.tab-indicator');
+        const grids = document.querySelectorAll('.projects-grid');
+
+        function moveIndicator(tab){
+            indicator.style.width = tab.offsetWidth + 'px';
+            indicator.style.left = tab.offsetLeft + 'px';
+            
+        }
+
+        moveIndicator(document.querySelector('.tab.active'));
+
+        tabs.forEach(tab=>{
+            tab.addEventListener('click',()=>{
+                tabs.forEach(t=>t.classList.remove('active'));
+                grids.forEach(g=>g.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.target).classList.add('active');
+
+                moveIndicator(tab);
+            });
+        });
+
+
+        // video section on home page
+        document.querySelectorAll('.video-card').forEach(card => {
+            card.addEventListener('click', () => {
+
+                // prevent duplicate video
+                if(card.querySelector('video')) return;
+
+                const videoSrc = card.dataset.video;
+                const posterImg = card.querySelector('img').src;
+
+                const video = document.createElement('video');
+                video.src = videoSrc;
+                video.poster = posterImg;
+                video.controls = true;
+                video.autoplay = true;
+                video.playsInline = true;
+                video.preload = "metadata";
+
+                card.innerHTML = "";
+                card.appendChild(video);
+            });
+        });
+
+        // light box
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        document.querySelectorAll('.lightbox-item').forEach(item=>{
+            item.addEventListener('click',()=>{
+                lightboxImg.src = item.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click',()=>{
+            lightbox.classList.remove('active');
+        });
+
+    </script>
+    {% endblock %}
+</body>
+</html>
