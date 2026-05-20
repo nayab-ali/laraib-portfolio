@@ -658,6 +658,14 @@ nav ul li a {
     font-weight: 700;
 }
 
+/* BUTTON WRAP */
+.portfolio-btn-wrap{
+    grid-column:1 / -1;
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+}
+
 /* BUTTON */
 .portfolio-btn{
     display:inline-flex;
