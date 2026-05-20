@@ -619,7 +619,8 @@ nav ul li a {
 /* ===== GRID ===== */
 .projects-grid{
     display:none;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    /* grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); */
+    grid-template-columns: repeat(3, 1fr);
     gap:30px;
 }
 
@@ -655,6 +656,25 @@ nav ul li a {
     margin-bottom:6px;
     color: #004643;
     font-weight: 700;
+}
+
+/* BUTTON */
+.portfolio-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 28px;
+    border-radius:50px;
+    background:#ffd84d;
+    color:#004643;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s ease;
+}
+
+.portfolio-btn:hover{
+    background:#ffca1a;
+    transform:translateY(-2px);
 }
 
 /* ===== VIDEO SECTION ===== */
