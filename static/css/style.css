@@ -580,6 +580,10 @@ nav ul li a {
     display:flex;
     gap:8px;
     background:#ffffff25;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    scrollbar-width:none; /* firefox */
     padding:6px;
     border-radius:50px;
     width:fit-content;
@@ -587,7 +591,10 @@ nav ul li a {
     left: 50%;
     transform: translateX(-50%);
 }
-
+/* chrome scrollbar hide */
+.tabs::-webkit-scrollbar{
+    display:none;
+}
 .tab{
     position:relative;
     padding:12px 26px;
@@ -595,7 +602,7 @@ nav ul li a {
     z-index:2;
     border-radius:40px;
     white-space:nowrap;
-    
+    flex: 0 0 auto;
     transition:color .3s ease;
 }
 
@@ -1182,7 +1189,11 @@ footer {
     }
 }
 
-
+@media (max-width: 370px) {
+    .tabs{
+        width: auto;
+    }
+}
 
 
 /* Mobile menu styles */
